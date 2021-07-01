@@ -1,5 +1,0 @@
-import Icon from 'react-native-vector-icons/FontAwesome'
-import Icon_Data from 'react-native-vector-icons/Entypo'
-import Icon_Time from 'react-native-vector-icons/MaterialIcons'
-import Icon_Shield from 'react-native-vector-icons/MaterialCommunityIcons'
-import Icon_Help from 'react-native-vector-icons/AntDesign'

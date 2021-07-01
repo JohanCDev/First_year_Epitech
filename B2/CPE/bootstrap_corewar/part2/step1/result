@@ -1,6 +1,0 @@
-We have    : 01 45 E3 00 00 15 00 00 00 | 01 3B 00 00 00 01 00 00 00 | 02 15 A | 04 59 6F 6C 6F 21 21 21 21
-Next step  : 01 45 E3 00 00 15 00 00 00 | 01 3B 00 00 00 01 00 00 00 | 02 15 00 00 00 0A 00 00 00 | 04 00 00 00 00 59 6F 6C 6F 21 21 21 21
-Final step : 01 E3 45 00 00 15 00 00 00 | 01 3B 00 00 00 01 00 00 00 | 02 15 00 00 00 0A 00 00 00 | 04 00 00 00 00 59 6F 6C 6F 21 21 21 21
-
-compile gcc yolotron-asm.c ../../my_str_to_word_array.c -o yolotron-asm -I../../includes -o yolotron-asm
-Execute ./yolotron-asm ../../example.yolotron example.bytecode
