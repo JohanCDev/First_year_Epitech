@@ -1,0 +1,20 @@
+# Binary files
+*.o
+*.gcno
+*.gcda
+
+# Documentation
+doc/html
+Doxyfile
+
+# CMake
+build
+CMakeFiles
+
+# VSCode
+.vscode/launch.json
+.vscode/settings.json
+
+# Misc
+include/libmy/config.h
+vgcore.*

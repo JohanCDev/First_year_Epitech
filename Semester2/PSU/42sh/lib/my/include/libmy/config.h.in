@@ -1,0 +1,77 @@
+/*
+** EPITECH PROJECT, 2021
+** LibMy
+** File description:
+** Library-wide configuration file
+*/
+
+/// @file
+///
+/// LibMy core constants
+/// @since 0.3.1
+
+#ifndef __LIBMY_CONFIG_H__
+#define __LIBMY_CONFIG_H__
+
+/// LibMy major version number.
+/// @since 0.1.0
+#define LIBMY_VERSION_MAJOR @VERSION_MAJOR@
+/// LibMy minor version number.
+/// @since 0.1.0
+#define LIBMY_VERSION_MINOR @VERSION_MINOR@
+/// LibMy patch version number.
+/// @since 0.1.0
+#define LIBMY_VERSION_PATCH @VERSION_PATCH@
+/// LibMy version.
+/// @since 0.1.0
+#define LIBMY_VERSION "@VERSION@"
+
+/// Big endian value.
+/// @since 0.3.1
+#define LIBMY_BIG_ENDIAN (1234)
+/// Little endian value.
+/// @since 0.3.1
+#define LIBMY_LITTLE_ENDIAN (4321)
+
+/// The endianess of this system, either @c LIBMY_BIG_ENDIAN or @c
+/// LIBMY_LITTLE_ENDIAN.
+///
+/// @since 0.3.1
+#define LIBMY_ENDIAN @LIBMY_ENDIAN@
+
+/// Whether the ascii module is available.
+/// @since 0.1.0
+#define LIBMY_HAS_ASCII_MODULE @LIBMY_HAS_ASCII_MODULE@
+/// Whether the collections module is available.
+/// @since 0.1.0
+#define LIBMY_HAS_COLLECTIONS_MODULE @LIBMY_HAS_COLLECTIONS_MODULE@
+/// Whether the hash module is available.
+/// @since 0.1.0
+#define LIBMY_HAS_HASH_MODULE @LIBMY_HAS_HASH_MODULE@
+/// Whether the io module is available.
+/// @since 0.1.0
+#define LIBMY_HAS_IO_MODULE @LIBMY_HAS_IO_MODULE@
+/// Whether the memory module is available.
+/// @since 0.1.0
+#define LIBMY_HAS_MEMORY_MODULE @LIBMY_HAS_MEMORY_MODULE@
+/// Whether the parsing module is available.
+/// @since 0.1.0
+#define LIBMY_HAS_PARSING_MODULE @LIBMY_HAS_PARSING_MODULE@
+/// Whether the printf module is available.
+/// @since 0.1.0
+#define LIBMY_HAS_PRINTF_MODULE @LIBMY_HAS_PRINTF_MODULE@
+
+/// Whether the use of malloc() or free() is enabled.
+/// @since 0.1.0
+#define LIBMY_ALLOW_MALLOC_FREE @LIBMY_ALLOW_MALLOC_FREE@
+/// Whether the use of open() is enabled.
+/// @since 0.1.0
+#define LIBMY_ALLOW_OPEN @LIBMY_ALLOW_OPEN@
+/// Whether the use of read() is enabled.
+/// @since 0.1.0
+#define LIBMY_ALLOW_READ @LIBMY_ALLOW_READ@
+/// Whether the use of close() is enabled.
+/// @since 0.1.0
+#define LIBMY_ALLOW_CLOSE @LIBMY_ALLOW_CLOSE@
+
+#endif // !defined(__LIBMY_CONFIG_H__)

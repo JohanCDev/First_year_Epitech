@@ -1,0 +1,10 @@
+suite = 'globbing'
+
+[globbing]
+description = 'Test some globbing usages'
+setup = "export PATH='/bin:/usr/bin'"
+tests = """
+echo 'ls [a-z]*'
+echo 'ls -l test_*'
+echo 'ls -l jjzlzĵoeigyfk*'
+"""

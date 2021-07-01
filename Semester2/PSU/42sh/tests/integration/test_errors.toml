@@ -1,0 +1,8 @@
+suite = 'errors'
+
+[exec-invalid-binary]
+description = 'Executes a invalid binary and compares error messages'
+setup = "export PATH='/bin:/usr/bin'"
+tests = """
+echo './bin/invalid'
+"""

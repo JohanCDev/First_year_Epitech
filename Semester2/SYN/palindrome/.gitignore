@@ -1,0 +1,10 @@
+*.o
+a.out
+out
+B-SYN*
+*.gcda
+*.gcno
+palindrome
+unit_tests
+vgcore.*
+.vscode

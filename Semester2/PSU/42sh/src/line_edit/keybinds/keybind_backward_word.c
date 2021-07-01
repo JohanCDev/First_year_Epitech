@@ -1,0 +1,26 @@
+/*
+** EPITECH PROJECT, 2021
+** 42sh
+** File description:
+** keybind_delete_word
+*/
+
+#include "token.h"
+#include "line_edit.h"
+
+int sh_keybind_backward_word(
+    sh_line_edit_t *line_edit, my_vec_t *line, my_iostream_t *stream, char *c)
+{
+    char *line_str = line->data;
+    size_t word_start = line_edit->pos - (line_edit->pos > 0);
+
+    (void)stream;
+    (void)c;
+    while (word_start > 0 && sh_is_arg_sep(line_str[word_start]))
+        word_start--;
+    while (word_start > 0 && !sh_is_arg_sep(line_str[word_start]))
+        word_start--;
+    line_edit->pos = word_start + sh_is_arg_sep(line_str[word_start]);
+    sh_line_edit_update(line_edit, line);
+    return 0;
+}
