@@ -1,0 +1,18 @@
+# Binary files
+*.o
+*.gcno
+*.gcda
+*.a
+42sh
+
+# Documentation
+doc/html
+Doxyfile
+
+# CMake
+build
+CMakeFiles
+
+# VSCode
+.vscode/settings.json
+.vscode/launch.json

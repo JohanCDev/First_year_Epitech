@@ -1,0 +1,17 @@
+suite = 'inhibitors'
+
+[inhibitor-quotes]
+description = 'Executes some commands using quotes'
+setup = "export PATH='/bin:/usr/bin'"
+tests = """
+echo 'touch "this is a multi words file"; rm \'this is a multi words file\''
+echo 'touch "semi"basic test; rm semibasic test'
+echo 'touch "this is a "\'multi words file\'"; rm \'this \'is\" a multi "word\'s file\''
+"""
+
+[inhibitor-backslash]
+description = 'Executes some commands using quotes'
+setup = "export PATH='/bin:/usr/bin'"
+tests = """
+echo 'touch this\ is\ a\ multi\ words\ file; rm this\ is\ a\ multi\ words\ file'
+"""

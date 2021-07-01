@@ -1,0 +1,103 @@
+suite = 'basic'
+
+[nothing]
+description = 'Does nothing'
+setup = "export TERM=xterm; export PATH='/bin:/usr/bin'"
+tests = """
+echo ''
+"""
+
+[exec-two-commands]
+description = 'Executes two simple commands'
+setup = "export TERM=xterm; export PATH='/bin:/usr/bin'"
+tests = """
+echo 'ls /etc'
+echo 'cat /etc/resolv.conf'
+"""
+
+[path-usr-bin]
+description = 'Tests with /usr/bin as the value of PATH'
+setup = "export TERM=xterm; PATH='/usr/bin'"
+tests = """
+echo 'pwd'
+"""
+
+[path-bin]
+description = 'Tests with /bin as the value of PATH'
+setup = "export TERM=xterm; PATH='/bin'"
+tests = """
+echo 'pwd'
+"""
+
+[run-commands]
+description = 'Runs basic commands'
+setup = "export TERM=xterm; PATH='/bin:/usr/bin'"
+tests = """
+echo 'cat /etc/resolv.conf'
+sleep 0.1
+echo 'ls -l /etc'
+sleep 0.1
+echo 'pwd'
+"""
+
+[setenv-unsetenv]
+description = 'Sets and unsets environment variables'
+setup = "/usr/bin/env > .lstenv; while read varenv; do unset $varenv; done < <(/bin/cat .lstenv | /usr/bin/cut -f1 -d=); export PATH=/bin:/usr/bin; export _=ls; export LS_COLORS=RID; export MYBG=4; export LVL=4; export NOTE=2"
+clean = 'while read varenv; do export "$varenv" 2>/dev/null; done  < <(/bin/cat .lstenv); /bin/rm -f .lstenv'
+tests = """
+echo 'unsetenv HOSTTYPE'
+echo 'unsetenv VENDOR'
+echo 'unsetenv OSTYPE'
+echo 'unsetenv MACHTYPE'
+echo 'unsetenv SHLVL'
+echo 'unsetenv PWD'
+echo 'unsetenv LOGNAME'
+echo 'unsetenv USER'
+echo 'unsetenv GROUP'
+echo 'unsetenv HOST'
+echo 'unsetenv REMOTEHOST'
+echo 'unsetenv _'
+echo 'unsetenv LS_COLORS'
+echo 'unsetenv NOTE'
+echo 'setenv titi'
+echo 'setenv tata coucou'
+echo 'env'
+echo '/usr/bin/env'
+echo 'setenv var1 val1'
+echo 'setenv var2 val2'
+"""
+
+[cd]
+description = 'Changing directories'
+setup = "export TERM=xterm; PATH='/bin:/usr/bin'"
+tests = """
+echo 'cd ..'
+echo 'ls -l'
+echo 'cd /usr'
+echo 'ls -l'
+"""
+
+[whitespace]
+description = 'Command with a lot of whitspace characters'
+setup = "export TERM=xterm; PATH='/bin:/usr/bin'"
+tests = """
+echo -e "\t\t    ls\t     \t-l    \t\t  \t -a /usr   \t\t"
+"""
+
+[simple-pipe]
+description = 'Simple pipe with two external commands'
+setup = "export TERM=xterm; PATH='/bin:/usr/bin'"
+tests = """
+echo "ls -l /etc | grep sh"
+"""
+
+[builtin-pipes]
+description = 'Pipes with builtin commands'
+setup="export VAR1=VALUE1; OLDPATH=$PATH; PATH='/random'"
+clean="PATH=$OLDPATH"
+tests = """
+echo 'setenv | /bin/grep VAR1'
+echo '/bin/ls | cd /usr'
+echo 'ls -l'
+echo 'exit 45|cat /etc/resolv.conf'
+"""

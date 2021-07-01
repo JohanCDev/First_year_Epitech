@@ -1,0 +1,50 @@
+suite = 'variable-expansion'
+
+[no-expansion]
+description = 'Performs no expansion on single-quoted strings'
+setup = ""
+tests = """
+echo 'set toycat=yes'
+echo './bin/get_args.sh \'$toycat\''
+"""
+
+[simple-expansion]
+description = 'Performs one expansion par argument'
+setup = ""
+tests = """
+echo 'set toycat=yes'
+echo 'set me=baba'
+echo './bin/get_args.sh "$toycat"'
+echo './bin/get_args.sh $toycat'
+echo './bin/get_args.sh $toycat $me'
+"""
+
+[multi-expansion]
+description = 'Performs multiple expansions'
+setup = ""
+tests = """
+echo 'set toycat=yes'
+echo 'set me=baba'
+echo './bin/get_args.sh "$toycat wololo $toycat"'
+echo './bin/get_args.sh "$me$toycat wololo $toycat"'
+"""
+
+[argument-split]
+description = 'Splits an unquoted argument expansion into multiple arguments'
+setup = ""
+tests = """
+echo 'set \'test=  This is a test\''
+echo './bin/get_args.sh $test'
+"""
+
+[redirects]
+description = 'Splits an unquoted argument expansion into multiple arguments'
+setup = "echo 'Some input content' > /tmp/.sh_input_file"
+clean = "rm /tmp/.sh_input_file"
+tests = """
+echo 'set in=/tmp/.sh_input_file'
+echo 'set out=/tmp/.sh_output_file'
+echo 'cat < $in'
+echo 'echo Testing > $out'
+echo 'cat < $in > $out'
+"""

@@ -1,0 +1,173 @@
+suite = 'builtins'
+
+[alias]
+description = 'Tests the alias builtin'
+setup = "export PATH='/bin:/usr/bin'"
+tests = """
+echo 'alias'
+echo 'alias X'
+echo 'alias X Y'
+echo 'alias X'
+echo 'alias'
+echo 'alias ls "ls --color=auto"'
+echo 'alias ll ls -l --color=auto'
+echo 'alias grep grep --color=auto'
+echo 'alias'
+echo 'alias ls'
+echo 'ls'
+echo 'll | grep t'
+echo 'alias ls echo yeet'
+echo '\ls'
+"""
+
+[alias-loop]
+description = 'Tests the alias builtin'
+setup = ""
+tests = """
+echo 'alias a b'
+echo 'alias b c'
+echo 'alias c d'
+echo 'alias d e'
+echo 'alias e f'
+echo 'alias f a'
+echo 'c'
+"""
+
+[exit-zero]
+description = 'Exits the shell with code 0'
+setup = ""
+tests = """
+echo 'exit 0'
+"""
+
+[exit-one]
+description = 'Exits the shell with code 1'
+setup = ""
+tests = """
+echo 'exit 1'
+"""
+
+[exit-fourty-two]
+description = 'Exits the shell with code 42'
+setup = ""
+tests = """
+echo 'exit 42'
+"""
+
+[exit-overflow]
+description = 'Exits the shell with code overflowing code 123456'
+setup = ""
+tests = """
+echo 'exit 123456'
+"""
+
+[repeat-zero-args]
+description = 'Executes repeat with no arguments'
+setup = "export PATH='/bin:/usr/bin'"
+tests = """
+echo 'repeat'
+"""
+
+[repeat-one-arg]
+description = 'Executes repeat with only one argument'
+setup = "export PATH='/bin:/usr/bin'"
+tests = """
+echo 'repeat 42'
+"""
+
+[repeat-invalid-count]
+description = 'Executes repeat with invalid count argument' 
+setup = "export PATH='/bin:/usr/bin'"
+tests = """
+echo 'repeat Y ls'
+"""
+
+[repeat-valid-args]
+description = 'Executes repeat with invalid count argument' 
+setup = "export PATH='/bin:/usr/bin'"
+tests = """
+echo 'repeat 0 ls'
+echo 'repeat 1 echo test'
+echo 'repeat 1 ls | grep ".toml"'
+echo 'repeat -1 pwd'
+echo 'repeat 42 cd ..'
+"""
+
+[setenv-invalid-var-start]
+setup = ""
+tests = """
+echo 'setenv 1TEST'
+"""
+
+[setenv-too-many-args]
+setup = ""
+tests = """
+echo 'setenv TEST1 this is a test'
+"""
+
+[setenv-valid-args]
+description = 'Exits the shell with code 0'
+setup = "unset `/usr/bin/env | /usr/bin/cut -d= -f1`"
+# We unset all tcsh-defined default envirnoment variables (yes, there are a LOT)
+tests = """
+echo 'unsetenv AFSUSER'
+echo 'unsetenv COLUMNS'
+echo 'unsetenv DISPLAY'
+echo 'unsetenv EDITOR'
+echo 'unsetenv GROUP'
+echo 'unsetenv HOME'
+echo 'unsetenv HOST'
+echo 'unsetenv HOSTTYPE'
+echo 'unsetenv HPATH'
+echo 'unsetenv LANG'
+echo 'unsetenv LC_CTYPE'
+echo 'unsetenv LINES'
+echo 'unsetenv LOGNAME'
+echo 'unsetenv LS_COLORS'
+echo 'unsetenv MACHTYPE'
+echo 'unsetenv NOREBIND'
+echo 'unsetenv OSTYPE'
+echo 'unsetenv PATH'
+echo 'unsetenv PWD'
+echo 'unsetenv REMOTEHOST'
+echo 'unsetenv SHLVL'
+echo 'unsetenv SYSTYPE'
+echo 'unsetenv TERM'
+echo 'unsetenv TERMCAP'
+echo 'unsetenv USER'
+echo 'unsetenv VENDOR'
+echo 'unsetenv VISUAL'
+echo 'unsetenv _'
+echo 'setenv'
+echo 'setenv TEST1'
+echo 'setenv TEST2 value'
+echo 'setenv TEST3 "This is a test"'
+echo 'setenv'
+"""
+
+[unset-no-args]
+description = 'Tests the unset builtin without paramters'
+setup = ""
+tests = """
+echo 'unalias'
+"""
+
+[unalias-no-args]
+description = 'Tests the alias builtin without paramters'
+setup = ""
+tests = """
+echo 'unalias'
+"""
+
+[unalias-valid-args]
+description = 'Tests the alias builtin'
+setup = ""
+tests = """
+echo 'alias ls ls --color=auto'
+echo 'alias yeet echo yeeeeee'
+echo 'alias truth true'
+echo 'unalias ls'
+echo 'alias'
+echo 'unalias truth'
+echo 'alias'
+"""

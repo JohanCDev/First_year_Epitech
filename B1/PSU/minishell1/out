@@ -1,0 +1,224 @@
+==30960== Memcheck, a memory error detector
+==30960== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==30960== Using Valgrind-3.16.1 and LibVEX; rerun with -h for copyright info
+==30960== Command: ./mysh
+==30960== 
+==30960== Invalid write of size 1
+==30960==    at 0x402DB7: copy_array (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402175: initialize_project (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x4022F6: main (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==  Address 0x4a3962f is 0 bytes after a block of size 15 alloc'd
+==30960==    at 0x483A809: malloc (vg_replace_malloc.c:307)
+==30960==    by 0x402D18: copy_array (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402175: initialize_project (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x4022F6: main (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960== 
+==30960== Conditional jump or move depends on uninitialised value(s)
+==30960==    at 0x40352A: my_strlen (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402F5C: reset_string (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x4028A3: search_for_existing_path (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402609: verify_path_exists (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x40271A: do_execution (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402858: do_others (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402439: switch_command_fourth (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402474: switch_command_third (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x4024CB: switch_command_second (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402561: switch_command (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402320: main (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==  Uninitialised value was created by a heap allocation
+==30960==    at 0x483A809: malloc (vg_replace_malloc.c:307)
+==30960==    by 0x4025D5: verify_path_exists (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x40271A: do_execution (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402858: do_others (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402439: switch_command_fourth (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402474: switch_command_third (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x4024CB: switch_command_second (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402561: switch_command (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402320: main (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960== 
+==30960== Invalid write of size 1
+==30960==    at 0x4031F4: my_strcat (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402A41: assemble_filepath (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x4028DD: search_for_existing_path (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402609: verify_path_exists (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x40271A: do_execution (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402858: do_others (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402439: switch_command_fourth (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402474: switch_command_third (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x4024CB: switch_command_second (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402561: switch_command (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402320: main (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==  Address 0x4a3c0e9 is 0 bytes after a block of size 25 alloc'd
+==30960==    at 0x483A809: malloc (vg_replace_malloc.c:307)
+==30960==    by 0x4025D5: verify_path_exists (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x40271A: do_execution (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402858: do_others (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402439: switch_command_fourth (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402474: switch_command_third (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x4024CB: switch_command_second (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402561: switch_command (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402320: main (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960== 
+==30960== Invalid write of size 1
+==30960==    at 0x40321F: my_strcat (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402A41: assemble_filepath (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x4028DD: search_for_existing_path (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402609: verify_path_exists (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x40271A: do_execution (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402858: do_others (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402439: switch_command_fourth (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402474: switch_command_third (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x4024CB: switch_command_second (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402561: switch_command (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402320: main (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==  Address 0x4a3c0eb is 2 bytes after a block of size 25 alloc'd
+==30960==    at 0x483A809: malloc (vg_replace_malloc.c:307)
+==30960==    by 0x4025D5: verify_path_exists (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x40271A: do_execution (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402858: do_others (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402439: switch_command_fourth (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402474: switch_command_third (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x4024CB: switch_command_second (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402561: switch_command (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402320: main (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960== 
+==30960== Syscall param stat(file_name) points to unaddressable byte(s)
+==30960==    at 0x495A72A: _xstat (in /usr/lib64/libc-2.31.so)
+==30960==    by 0x4028FD: search_for_existing_path (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402609: verify_path_exists (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x40271A: do_execution (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402858: do_others (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402439: switch_command_fourth (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402474: switch_command_third (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x4024CB: switch_command_second (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402561: switch_command (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402320: main (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==  Address 0x4a3c0e9 is 0 bytes after a block of size 25 alloc'd
+==30960==    at 0x483A809: malloc (vg_replace_malloc.c:307)
+==30960==    by 0x4025D5: verify_path_exists (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x40271A: do_execution (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402858: do_others (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402439: switch_command_fourth (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402474: switch_command_third (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x4024CB: switch_command_second (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402561: switch_command (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402320: main (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960== 
+==30960== Invalid read of size 1
+==30960==    at 0x403525: my_strlen (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402F5C: reset_string (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x4028A3: search_for_existing_path (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402609: verify_path_exists (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x40271A: do_execution (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402858: do_others (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402439: switch_command_fourth (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402474: switch_command_third (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x4024CB: switch_command_second (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402561: switch_command (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402320: main (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==  Address 0x4a3c0e9 is 0 bytes after a block of size 25 alloc'd
+==30960==    at 0x483A809: malloc (vg_replace_malloc.c:307)
+==30960==    by 0x4025D5: verify_path_exists (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x40271A: do_execution (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402858: do_others (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402439: switch_command_fourth (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402474: switch_command_third (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x4024CB: switch_command_second (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402561: switch_command (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960==    by 0x402320: main (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30960== 
+==30962== Syscall param execve(envp[i]) points to uninitialised byte(s)
+==30962==    at 0x49371AB: execve (in /usr/lib64/libc-2.31.so)
+==30962==    by 0x40275C: do_execution (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30962==    by 0x402858: do_others (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30962==    by 0x402439: switch_command_fourth (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30962==    by 0x402474: switch_command_third (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30962==    by 0x4024CB: switch_command_second (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30962==    by 0x402561: switch_command (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30962==    by 0x402320: main (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30962==  Address 0x4a3962e is 14 bytes inside a block of size 15 alloc'd
+==30962==    at 0x483A809: malloc (vg_replace_malloc.c:307)
+==30962==    by 0x402D18: copy_array (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30962==    by 0x402175: initialize_project (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30962==    by 0x4022F6: main (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30962==  Uninitialised value was created by a heap allocation
+==30962==    at 0x483A809: malloc (vg_replace_malloc.c:307)
+==30962==    by 0x402D18: copy_array (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30962==    by 0x402175: initialize_project (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30962==    by 0x4022F6: main (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30962== 
+==30962== Syscall param execve(envp) points to uninitialised byte(s)
+==30962==    at 0x49371AB: execve (in /usr/lib64/libc-2.31.so)
+==30962==    by 0x40275C: do_execution (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30962==    by 0x402858: do_others (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30962==    by 0x402439: switch_command_fourth (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30962==    by 0x402474: switch_command_third (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30962==    by 0x4024CB: switch_command_second (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30962==    by 0x402561: switch_command (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30962==    by 0x402320: main (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30962==  Address 0x4a395d8 is 536 bytes inside a block of size 537 alloc'd
+==30962==    at 0x483A809: malloc (vg_replace_malloc.c:307)
+==30962==    by 0x402CB5: copy_array (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30962==    by 0x402175: initialize_project (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30962==    by 0x4022F6: main (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30962==  Uninitialised value was created by a heap allocation
+==30962==    at 0x483A809: malloc (vg_replace_malloc.c:307)
+==30962==    by 0x402CB5: copy_array (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30962==    by 0x402175: initialize_project (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30962==    by 0x4022F6: main (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30962== 
+==30964== Syscall param execve(envp[i]) points to uninitialised byte(s)
+==30964==    at 0x49371AB: execve (in /usr/lib64/libc-2.31.so)
+==30964==    by 0x40275C: do_execution (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30964==    by 0x402858: do_others (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30964==    by 0x402439: switch_command_fourth (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30964==    by 0x402474: switch_command_third (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30964==    by 0x4024CB: switch_command_second (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30964==    by 0x402561: switch_command (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30964==    by 0x402320: main (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30964==  Address 0x4a3962e is 14 bytes inside a block of size 15 alloc'd
+==30964==    at 0x483A809: malloc (vg_replace_malloc.c:307)
+==30964==    by 0x402D18: copy_array (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30964==    by 0x402175: initialize_project (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30964==    by 0x4022F6: main (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30964==  Uninitialised value was created by a heap allocation
+==30964==    at 0x483A809: malloc (vg_replace_malloc.c:307)
+==30964==    by 0x402D18: copy_array (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30964==    by 0x402175: initialize_project (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30964==    by 0x4022F6: main (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30964== 
+==30964== Syscall param execve(envp) points to uninitialised byte(s)
+==30964==    at 0x49371AB: execve (in /usr/lib64/libc-2.31.so)
+==30964==    by 0x40275C: do_execution (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30964==    by 0x402858: do_others (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30964==    by 0x402439: switch_command_fourth (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30964==    by 0x402474: switch_command_third (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30964==    by 0x4024CB: switch_command_second (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30964==    by 0x402561: switch_command (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30964==    by 0x402320: main (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30964==  Address 0x4a395d8 is 536 bytes inside a block of size 537 alloc'd
+==30964==    at 0x483A809: malloc (vg_replace_malloc.c:307)
+==30964==    by 0x402CB5: copy_array (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30964==    by 0x402175: initialize_project (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30964==    by 0x4022F6: main (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30964==  Uninitialised value was created by a heap allocation
+==30964==    at 0x483A809: malloc (vg_replace_malloc.c:307)
+==30964==    by 0x402CB5: copy_array (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30964==    by 0x402175: initialize_project (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30964==    by 0x4022F6: main (in /home/Johan/delivery/B1/PSU/B-PSU-101-NAN-1-1-minishell1-johan.chrillesen/mysh)
+==30964== 
+==30960== 
+==30960== HEAP SUMMARY:
+==30960==     in use at exit: 6,056 bytes in 77 blocks
+==30960==   total heap usage: 91 allocs, 14 frees, 19,984 bytes allocated
+==30960== 
+==30960== LEAK SUMMARY:
+==30960==    definitely lost: 1,481 bytes in 8 blocks
+==30960==    indirectly lost: 4,427 bytes in 68 blocks
+==30960==      possibly lost: 148 bytes in 1 blocks
+==30960==    still reachable: 0 bytes in 0 blocks
+==30960==         suppressed: 0 bytes in 0 blocks
+==30960== Rerun with --leak-check=full to see details of leaked memory
+==30960== 
+==30960== For lists of detected and suppressed errors, rerun with: -s
+==30960== ERROR SUMMARY: 83 errors from 6 contexts (suppressed: 0 from 0)

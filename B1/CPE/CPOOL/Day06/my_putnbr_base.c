@@ -1,0 +1,37 @@
+/*
+** EPITECH PROJECT, 2020
+** my_putnbr_base
+** File description:
+** 
+*/
+
+#include <stdio.h>
+
+void dec_to_hex(int nbr)
+{
+    int remainder;
+    int i;
+    char str[] = "";
+    
+    if (nbr == 0) {
+        str[0] = 0;
+    }
+    while (nbr != 0) {
+        remainder = nbr % 16;
+        if (remainder < 10) {
+            str[i++] = 48 + remainder;
+        } else {
+            str[i++] = 55 + remainder + 32;
+        }
+        nbr = nbr / 16;
+    }
+    for (int j = i; j >= 0; j--) {
+        printf("%c", str[j]);
+    }
+}
+
+int main(void)
+{
+    dec_to_hex(10);
+    return(0);
+}

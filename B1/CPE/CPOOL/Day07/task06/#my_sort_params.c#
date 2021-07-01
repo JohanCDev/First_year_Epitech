@@ -1,0 +1,67 @@
+/*
+** EPITECH PROJECT, 2020
+** my_sort_params
+** File description:
+** sort_params in alpha order
+*/
+
+#include <stdio.h>
+
+int my_strcmp(char const *s1, char const *s2)
+{
+    int i = 0;
+    while (s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i])
+        i++;
+    return (s1[i] - s2[i]);
+}
+
+
+char *my_strcpy(char *dest, char const *src)
+{
+    int i = 0;
+
+    while (src[i]) {
+        dest[i] = src[i];
+        i++;
+    }
+    dest[i] = 0;
+    return (dest);
+}
+
+int swap_string(char *s1, char *s2)
+{
+    char stock[100];
+    char *ptr_stock = stock;
+    int swapped = 1;
+    
+    if (my_strcmp(s1, s2) > 0) {
+        ptr_stock = my_strcpy(stock, s1);
+        my_strcpy(s1, s2);
+        my_strcpy(s2, ptr_stock);
+        swapped = 0;
+    }
+    return (swapped);
+}
+
+void my_sort_str_array(char *array[], int size)
+{
+    int done = 0;
+    
+    while(!done) {
+        for (int i = 0; i < size-1; i++) {
+            done = swap_string(array[i], array[i + 1]);
+        }
+    }
+}
+
+int main(int argc, char **argv)
+{
+    my_sort_str_array(argv, argc);
+    for (int i = 0; i < argc; i++) {
+        while (*str != '\0') {
+            my_putchar(*str);
+            str++;
+        }
+    }
+    return (0);
+}

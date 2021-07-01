@@ -1,0 +1,15 @@
+*.o
+.vscode
+out
+vgcore.*
+calendar
+*.gcda
+*.gcno
+file_test
+unit_tests
+lib/libmy.a
+lib/my/libmy.a
+unit_tests
+devnull
+file_test
+vg

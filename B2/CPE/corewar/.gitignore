@@ -1,0 +1,8 @@
+*.o
+hey
+out
+asm/asm
+.vscode
+*.s
+*.cor
+asm/src/example
