@@ -15,7 +15,7 @@ Clean all the project with make clean / make fclean
 
 ### Coding Style
 
-All of the projects are developed with C/C++ except designsprint that is in react-native. EPITECH doesn't impose it's Coding Style to the projects
+All of the projects are developed with C/C++ except designsprint that is in react-native. EPITECH doesn't impose it's Coding Style certain projects
 and I tried to follow it as much as possible.
 
 ## Authors
