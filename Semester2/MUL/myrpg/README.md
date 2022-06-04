@@ -25,8 +25,3 @@ My_RPG is developed with C. My_RPG is compliant with **EPITECH C / C++ Coding St
 * **Nathan Rousseau** - [Nathan](https://github.com/PoryLaggron)
 * **Guillaume Terrière** - [GuyomT](https://github.com/GuyomT)
 
-## Asked GIFS
-
-![Alt Text](https://media1.tenor.com/images/7c4b13cd72970a5bd1688f0525835393/tenor.gif?itemid=7315643)<br/>
-![Alt Text](https://media1.tenor.com/images/3fa763c056e9ccf0a7f9f7172aade0da/tenor.gif?itemid=5033875)<br/>
-
